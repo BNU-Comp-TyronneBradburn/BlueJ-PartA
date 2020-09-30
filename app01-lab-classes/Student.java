@@ -6,6 +6,7 @@ import java.util.*;
  * 
  * @author Michael Kölling and David Barnes
  * @version 2016.02.29
+ * modified by Tyronne Bradburn
  */
 public class Student
 {
