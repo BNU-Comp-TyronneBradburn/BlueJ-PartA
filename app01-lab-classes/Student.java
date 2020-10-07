@@ -8,7 +8,7 @@ import java.util.*;
  * @version 2016.02.29
  * modified by Tyronne Bradburn
  */
-public class Student
+public class Student    
 {
     // the student's full name
     private String name;
