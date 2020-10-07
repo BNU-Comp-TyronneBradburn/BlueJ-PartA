@@ -1,0 +1,36 @@
+LabClass co452Lab = new LabClass(3);
+Student student1 = new Student("Kelly", "20024628");
+Student student2 = new Student("Megan", "20013579");
+Student student3 = new Student("John", "20012345");
+student1.addCredits(20);
+student2.addCredits(20);
+student3.addCredits(20);
+student1.changeName("Johnny");
+co452Lab.enrollStudent(student1);
+co452Lab.printList();
+Lab class unknown
+Instructor: unknown   Room: unknown
+Class list:
+Johnny, student ID: 20024628, credits: 20
+Number of students: 1
+co452Lab.enrollStudent(student2);
+co452Lab.enrollStudent(student3);
+co452Lab.printList();
+Lab class unknown
+Instructor: unknown   Room: unknown
+Class list:
+Johnny, student ID: 20024628, credits: 20
+Megan, student ID: 20013579, credits: 20
+John, student ID: 20012345, credits: 20
+Number of students: 3
+co452Lab.setInstructor("nick day");
+co452Lab.setTime("Tuesday 29th Sep 9:00");
+co452Lab.setRoom("G3.01");
+co452Lab.printList();
+Lab class Tuesday 29th Sep 9:00
+Instructor: nick day   Room: G3.01
+Class list:
+Johnny, student ID: 20024628, credits: 20
+Megan, student ID: 20013579, credits: 20
+John, student ID: 20012345, credits: 20
+Number of students: 3
