@@ -1,0 +1,16 @@
+Course course1 = new Course("Computing", "G400");
+Course course1 = new Course("Computing", "G400");
+Student student1 = new Student("Kelly", "20024628");
+student1.enrollOnCourse(course1);
+student1.enrollOnCourse(course1);
+Student student1 = new Student("Kelly", "20024628");
+Course course1 = new Course("Computing", "G400");
+student1.enrollOnCourse(course1);
+student1.print();
+Kelly, student ID: 20024628, credits: 0
+Course;ComputingG400
+student1.print();
+Kelly, student ID: 20024628, credits: 0
+Course;ComputingG400
+course1.print();
+Course;ComputingG400
