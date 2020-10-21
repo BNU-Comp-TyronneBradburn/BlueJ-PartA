@@ -1,0 +1,39 @@
+ticketMa1.printAllTickets();
+##################
+# The Bradburn Line
+# by Tyronne Bradburn
+##################
+
+
+the following tickets are availabe:-
+
+ Ticket to Aylesbury 220 pence  issued @ Wed Oct 21 12:02:40 BST 2020
+
+ Ticket to Amersham 300 pence  issued @ Wed Oct 21 12:02:40 BST 2020
+
+ Ticket to High Wycombe 330 pence  issued @ Wed Oct 21 12:02:40 BST 2020
+Ticket ticket1 = new Ticket("Aylesbury", 220);
+Ticket ticket2 = new Ticket("Amersham", 300);
+Ticket ticket3 = new Ticket("High Wycombe", 330);
+ticketMa1.getBalance()
+    returned int 0
+ticketMa1.getPrice()
+    returned int 0
+ticketMa1.refundBalance()
+    returned int 0
+ticketMa1.insertMoney(10);
+ticketMa1.SelcethighwycombeTicket();
+ticketMa1.getBalance()
+    returned int 10
+ticket1.print();
+ Ticket to Aylesbury 220 pence  issued @ Wed Oct 21 12:04:30 BST 2020
+ticketMa1.refundBalance()
+    returned int 10
+ticketMa1.insertMoney(350);
+ticketMa1.refundBalance()
+    returned int 350
+ticket1.print();
+ Ticket to Aylesbury 220 pence  issued @ Wed Oct 21 12:04:30 BST 2020
+ticketMa1.insertMoney(220);
+ticket1.print();
+ Ticket to Aylesbury 220 pence  issued @ Wed Oct 21 12:04:30 BST 2020

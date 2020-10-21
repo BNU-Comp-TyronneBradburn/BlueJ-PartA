@@ -1,0 +1,29 @@
+Ticket ticket1 = new Ticket("Ticket", 220);
+Ticket ticket1 = new Ticket("Aylesbury", 220);
+ticket1.print();
+Ticket toAylesbury220Wed Oct 14 14:40:21 BST 2020220 issued @ Wed Oct 14 14:40:21 BST 2020
+TicketMachine ticketMa1 = new TicketMachine(220);
+ticketMa1.printTicket();
+You must insert at least: 220 more cents.
+TicketMachine Aylesbury = new TicketMachine();
+Aylesbury.printTicket();
+##################
+# The BlueJ Line
+# Ticket
+##################
+
+Ticket toAylesbury220issued @Wed Oct 14 14:47:27 BST 2020
+Aylesbury.printTicket();
+##################
+# The BlueJ Line
+# Ticket
+##################
+
+Ticket toAylesbury220issued @Wed Oct 14 14:47:27 BST 2020
+Aylesbury.printTicket();
+##################
+# The BlueJ Line
+# Ticket
+##################
+
+Ticket toAylesbury220issued @Wed Oct 14 14:47:27 BST 2020
