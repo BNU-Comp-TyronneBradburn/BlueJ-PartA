@@ -19,8 +19,10 @@ public class TicketMachine
     // The total amount of money collected by this machine.
     private int total;
     
-    // The price of thee ticket 
-    private int price;
+    // The price of the ticket 
+    private int Price;
+    
+    
     
     private Ticket issuedTicket;
     
@@ -50,10 +52,10 @@ public class TicketMachine
     /**
      * return the price of the ticket
      */
-public int getPrice()
-{
-    return price;
-}
+    public int getPrice()
+    {
+        return Price;
+    }
 
 
     /**
@@ -69,11 +71,20 @@ public int getPrice()
      * The machine will recive an amount from the customer 
      */
     public void insertMoney(Coin Value)
-{
-    balance = balance + Value.getvalue();
-}
+    {
+        balance = balance + Value.getvalue();
+    }
    
+    /**
+     * The machine will return the coins inserted.
+     */
+    public void printBalance (int amount)
+    {
+        System.out.println("amount inserted = "  + amount);
+        System.out.println("current balance = " + balance);
+    }
 
+    
     /**
      * Receive an amount of money from a customer.
      * Check that the amount is sensible.
@@ -93,18 +104,18 @@ public int getPrice()
     
     public void SelectaylesburyTicket()
     {
-    issuedTicket = aylesburyTicket;
-}
+        issuedTicket = aylesburyTicket;
+    }
 
     public void SelectamershamTicket()
-{
-    issuedTicket = amershamTicket;
-}
+    {
+        issuedTicket = amershamTicket;
+    }
 
-public void SelcethighwycombeTicket()
-{
-    issuedTicket = highwycombeTicket;
-}
+    public void SelcethighwycombeTicket()
+    {
+        issuedTicket = highwycombeTicket;
+    }
 
     
 
@@ -120,6 +131,7 @@ public void SelcethighwycombeTicket()
         return amountToRefund;
     }
     
+   
     /**
      * This shows what tickets are availabe on the machine.
      */
@@ -146,4 +158,78 @@ public void SelcethighwycombeTicket()
         System.out.println();       
     }
     
+    /**
+     * 
+     */
+    public void printTicket()
+    {
+        int price = issuedTicket.getPrice();
+   
+        if(balance >=price)
+        {
+            System.out.println("##################");
+        System.out.println("# The Bradburn Line");
+        System.out.println("# by Tyronne Bradburn");
+        issuedTicket.print();
+        System.out.println("##################");    
+        System.out.println();   
+        
+        total = total + price;
+        
+        balance = balance - price;
+    }
+    else
+        {
+        System.out.println("You must insert at least: " + 
+                            (price - balance) + "more pence. ");
+    }
+                        
+     }
+    
+    public void selectTicket(String whereTo)
+    {
+         if(whereTo.startsWith("Ayl"))
+        {
+            issuedTicket = aylesburyTicket;
+        }
+        else if(whereTo.startsWith("Ame"))
+        {
+            issuedTicket = amershamTicket;
+        }
+        else if(whereTo.startsWith("highwycombe"))
+        {
+            issuedTicket = highwycombeTicket;
+        }
+        else 
+        {
+            issuedTicket = null;
+            System.out.println("Invalid Destination");
+    }
+    }
+
+    
+    public void insert10pCoin()
+    {
+        balance = balance + 10;
+        printBalance(10);
+    }
+    
+    public void insert20pCoin()
+    {
+        balance = balance + 20;
+        printBalance(20);
+    }
+    
+    public void insert100Coin()
+    {
+        balance = balance + 100;
+        printBalance(100);
+    }
+    
+     public void insert200Coin()
+    {
+        balance = balance + 200;
+        printBalance(200);
+        
+    }
 }

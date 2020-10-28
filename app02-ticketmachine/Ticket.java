@@ -34,7 +34,7 @@ public String returnDestination()
     return destination;
 }
 
-public int returnPrice()
+public int getPrice()
 {
     return price;
 }
