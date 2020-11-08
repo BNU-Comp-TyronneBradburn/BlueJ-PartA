@@ -1,3 +1,5 @@
+
+
 import java.util.Random;
 
 /**
@@ -15,7 +17,6 @@ public class StockDemo
     
     private Random generator;
     
-    private String name = "Samsung Galaxy";
     
     /**
      * Create a StockManager and populate it with a few
@@ -89,38 +90,46 @@ public class StockDemo
     public void runDemo()
     {
         manager.printAllProducts();
-        demoDelivery();
-        demoSell();
+        
+        demoDeliveryProducts();
+        
+        manager.printAllProducts();
+        
+        demoSellProducts();
+        
+        manager.printAllProducts();
     }
     
-    private void demoSell()
+    private void demoSellProducts()
     {
+        System.out.println("Sell");
+        
         int quantity = 0;
         
         for(int id = 101; id <= 110; id++)
         {
             quantity = generator.nextInt(8);
             Product product = manager.findProduct(id);
-            product.sellProduct(id, amount);
+            manager.sellProducts(id, quantity);
         }
         
         manager.printAllProducts();
     }
     
-    private void demoDelivery()
+    private void demoDeliveryProducts()
     {
-        System.out.println("/nDemonstarting Product Devlivery/n");
+        System.out.println("Demonstarting Product Devlivery");
         int amount = 0;
         
         for(int id = 101; id<=110; id++)
         {
             amount = generator.nextInt(8);
-            manager.deliverProduct(id,amount);
+            manager.deliverProduct(id, amount);
             amount++;
         }
         
     }
-        
+ 
 }
     
     

@@ -1,0 +1,124 @@
+StockManager stock = new StockManager();
+StockDemo stockDem1 = new StockDemo(stock);
+stockDem1.runDemo();
+====================
+Tyronne's Stock
+====================
+101: Samsung Galaxy S10 stock level: 0
+102: Samsubg Galaxy S10 Plus stock level: 0
+103: Samsung Galaxy S20 stock level: 0
+104: Samsung Galaxy S20 Plus stock level: 0
+105: Apple Iphone 12 stock level: 0
+106: Apple Iphone 12 Max stock level: 0
+107: Sony xperia 5 II stock level: 0
+108: Google Pixel 4A stock level: 0
+109: Huawei P40 stock level: 0
+110: Huawei P40 Pro stock level: 0
+Demonstarting Product Devlivery
+Product Delivered : 101: Samsung Galaxy S10 stock level: 6
+Product Delivered : 102: Samsubg Galaxy S10 Plus stock level: 2
+Product Delivered : 103: Samsung Galaxy S20 stock level: 4
+Product Delivered : 104: Samsung Galaxy S20 Plus stock level: 2
+Product Delivered : 105: Apple Iphone 12 stock level: 3
+Product Delivered : 106: Apple Iphone 12 Max stock level: 3
+Product Delivered : 107: Sony xperia 5 II stock level: 6
+Product Delivered : 108: Google Pixel 4A stock level: 6
+Product Delivered : 109: Huawei P40 stock level: 3
+Product Delivered : 110: Huawei P40 Pro stock level: 3
+====================
+Tyronne's Stock
+====================
+101: Samsung Galaxy S10 stock level: 6
+102: Samsubg Galaxy S10 Plus stock level: 2
+103: Samsung Galaxy S20 stock level: 4
+104: Samsung Galaxy S20 Plus stock level: 2
+105: Apple Iphone 12 stock level: 3
+106: Apple Iphone 12 Max stock level: 3
+107: Sony xperia 5 II stock level: 6
+108: Google Pixel 4A stock level: 6
+109: Huawei P40 stock level: 3
+110: Huawei P40 Pro stock level: 3
+Sell
+101: Samsung Galaxy S10 stock level: 6
+Sold6ofSamsung Galaxy S10
+101: Samsung Galaxy S10 stock level: 0
+102: Samsubg Galaxy S10 Plus stock level: 2
+Insufficient Stock = 2 amount ordered = 3
+102: Samsubg Galaxy S10 Plus stock level: 0
+103: Samsung Galaxy S20 stock level: 4
+Sold0ofSamsung Galaxy S20
+103: Samsung Galaxy S20 stock level: 4
+104: Samsung Galaxy S20 Plus stock level: 2
+Sold0ofSamsung Galaxy S20 Plus
+104: Samsung Galaxy S20 Plus stock level: 2
+105: Apple Iphone 12 stock level: 3
+Insufficient Stock = 3 amount ordered = 5
+105: Apple Iphone 12 stock level: 0
+106: Apple Iphone 12 Max stock level: 3
+Sold2ofApple Iphone 12 Max
+106: Apple Iphone 12 Max stock level: 1
+107: Sony xperia 5 II stock level: 6
+Sold5ofSony xperia 5 II
+107: Sony xperia 5 II stock level: 1
+108: Google Pixel 4A stock level: 6
+Sold6ofGoogle Pixel 4A
+108: Google Pixel 4A stock level: 0
+109: Huawei P40 stock level: 3
+Insufficient Stock = 3 amount ordered = 6
+109: Huawei P40 stock level: 0
+110: Huawei P40 Pro stock level: 3
+Sold2ofHuawei P40 Pro
+110: Huawei P40 Pro stock level: 1
+====================
+Tyronne's Stock
+====================
+101: Samsung Galaxy S10 stock level: 0
+102: Samsubg Galaxy S10 Plus stock level: 0
+103: Samsung Galaxy S20 stock level: 4
+104: Samsung Galaxy S20 Plus stock level: 2
+105: Apple Iphone 12 stock level: 0
+106: Apple Iphone 12 Max stock level: 1
+107: Sony xperia 5 II stock level: 1
+108: Google Pixel 4A stock level: 0
+109: Huawei P40 stock level: 0
+110: Huawei P40 Pro stock level: 1
+====================
+Tyronne's Stock
+====================
+101: Samsung Galaxy S10 stock level: 0
+102: Samsubg Galaxy S10 Plus stock level: 0
+103: Samsung Galaxy S20 stock level: 4
+104: Samsung Galaxy S20 Plus stock level: 2
+105: Apple Iphone 12 stock level: 0
+106: Apple Iphone 12 Max stock level: 1
+107: Sony xperia 5 II stock level: 1
+108: Google Pixel 4A stock level: 0
+109: Huawei P40 stock level: 0
+110: Huawei P40 Pro stock level: 1
+stock.removeProduct(107);
+stock.removeProduct(108);
+stock.printAllProducts();
+====================
+Tyronne's Stock
+====================
+101: Samsung Galaxy S10 stock level: 0
+102: Samsubg Galaxy S10 Plus stock level: 0
+103: Samsung Galaxy S20 stock level: 4
+104: Samsung Galaxy S20 Plus stock level: 2
+105: Apple Iphone 12 stock level: 0
+106: Apple Iphone 12 Max stock level: 1
+109: Huawei P40 stock level: 0
+110: Huawei P40 Pro stock level: 1
+stock.searchProduct("Samsung");
+101: Samsung Galaxy S10 stock level: 0
+103: Samsung Galaxy S20 stock level: 4
+104: Samsung Galaxy S20 Plus stock level: 2
+stock.searchProduct("Apple");
+105: Apple Iphone 12 stock level: 0
+106: Apple Iphone 12 Max stock level: 1
+stock.searchProduct("Huawei");
+109: Huawei P40 stock level: 0
+110: Huawei P40 Pro stock level: 1
+stock.searchProduct("Iphone 12");
+105: Apple Iphone 12 stock level: 0
+106: Apple Iphone 12 Max stock level: 1

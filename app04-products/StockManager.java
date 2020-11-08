@@ -29,6 +29,19 @@ public class StockManager
         stock.add(item);
     }
     
+    public void removeProduct(int id)
+    {
+        Product product = findProduct(id);
+        if(product != null)
+        {
+            stock.remove(product);
+        }
+        else
+        {
+            System.out.println("Enter a valid ID number");
+        }
+    }
+    
     /**
      * Receive a delivery of a particular product.
      * Increase the quantity of the product by the given amount.
@@ -55,14 +68,14 @@ public class StockManager
      * Show the before and after status of the product.
      * @param id The ID of the product being sold.
      */
-    public void sellProduct(int id, int amount)
+    public void sellProducts(int id, int quantity)
     {
         Product product = findProduct(id);
         
         if(product != null) 
         {
             printDetails(id);
-            product.sellProduct(id, amount);
+            product.sell(quantity);
             printDetails(id);
         }
     }
@@ -112,16 +125,29 @@ public class StockManager
         return 0;
     }
     
-    
+    /**
+     * Search for a product in stock with the products 
+     * partial name
+     */
+    public void searchProduct(String name)
+    {
+        for(Product product : stock)
+        {
+            if(product.getName().contains(name))
+            {
+                System.out.println(product);
+            }       
+        }    
+    }
     
     /**
      * Print details of all the products.
      */
     public void printAllProducts()
     {
-        System.out.println("/n====================");
+        System.out.println("====================");
         System.out.println("Tyronne's Stock");
-        System.out.println("====================/n");
+        System.out.println("====================");
         for(Product product : stock)
         {
          System.out.println(product);   
