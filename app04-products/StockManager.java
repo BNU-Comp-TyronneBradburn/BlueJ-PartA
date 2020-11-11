@@ -131,9 +131,12 @@ public class StockManager
      */
     public void searchProduct(String name)
     {
+        name = name.toLowerCase();
+        
         for(Product product : stock)
         {
-            if(product.getName().contains(name))
+            String productName = product.getName().toLowerCase();
+            if(productName.contains(name))
             {
                 System.out.println(product);
             }       
