@@ -4,13 +4,17 @@
  * stock manager so that users can add, edit,
  * print and remove stock products
  *
- * @author Student Name
- * @version 0.1
+ * @author Tyronne Bradburn
+ * @version 11/11/2020
  */
 public class StockApp
 {
     // Use to get user input
     private InputReader input;
+    
+    private StockManager manager;
+    
+    private StockDemo oldStock;
     
     /**
      * Constructor for objects of class StockApp
@@ -18,14 +22,15 @@ public class StockApp
     public StockApp()
     {
         input = new InputReader();
+        manager = new StockManager();
+        oldStock = new StockDemo(manager);
     }
 
     /**
      * 
      */
     public void run()
-    {
-        printHeading();
+    {       
         getMenuChoice();
     }
     
@@ -42,10 +47,60 @@ public class StockApp
             printMenuChoices();
            
             String choice = input.getInput();
+            
             finished = true;
+            choice = choice.toLowerCase();
+            if(choice.equals("quit"))
+            {
+                finished = true;
+            }
+            else
+            {
+                executeMenuChoice(choice);
+            }
+            
         }
     }
     
+    private void executeMenuChoice(String choice)
+    {
+        if(choice.equals("add"))
+        {
+            addProduct();
+        }
+        else if(choice.equals("remove"))
+        {
+            removeProduct();
+        }
+        else if(choice.equals("printall"))
+        {
+            printAllProducts();
+        }
+    }
+    
+    /**
+     * 
+     */
+    private void addProduct()
+    {
+        
+    }
+    
+    /**
+     * 
+     */
+    private void removeProduct()
+    {
+        
+    }
+    
+    /**
+     * 
+     */
+    private void printAllProducts()
+    {
+        manager.printAllProducts();
+    }
    
     /**
      * Print out a menu of operation choices
@@ -65,9 +120,9 @@ public class StockApp
      */
     private void printHeading()
     {
-        System.out.println("******************************");
+        System.out.println("/n******************************");
         System.out.println(" Stock Management Application ");
-        System.out.println("    App05: by Student Name");
+        System.out.println("    App05: by Tyronne Bradburn");
         System.out.println("******************************");
     }
 }

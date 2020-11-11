@@ -1,4 +1,3 @@
-import java.util.HashSet;
 import java.util.Scanner;
 
 /**
@@ -30,7 +29,6 @@ public class InputReader
     {
         System.out.print("> ");         // print prompt
         String inputLine = reader.nextLine();
-
         return inputLine;
     }
 }
