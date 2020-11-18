@@ -10,7 +10,7 @@
 public class StockApp
 {
     // Use to get user input
-    private InputReader input;
+    private InputReader reader;
     
     private StockManager manager;
     
@@ -21,13 +21,13 @@ public class StockApp
      */
     public StockApp()
     {
-        input = new InputReader();
+        reader = new InputReader();
         manager = new StockManager();
         oldStock = new StockDemo(manager);
     }
 
     /**
-     * 
+     * Method to bring up the m
      */
     public void run()
     {       
@@ -46,9 +46,9 @@ public class StockApp
             printHeading();
             printMenuChoices();
            
-            String choice = input.getInput();
+            String choice = reader.getInput();
             
-            finished = true;
+            
             choice = choice.toLowerCase();
             if(choice.equals("quit"))
             {
@@ -79,23 +79,45 @@ public class StockApp
     }
     
     /**
-     * 
+     * Method to add a new product with a ID number 
      */
     private void addProduct()
     {
+        System.out.println("Adding a new product");
         
+        System.out.println("Please enter the product ID");
+        String value = reader.getInput();
+        int id = Integer.parseInt(value);
+        
+        System.out.println("Please enter product name");
+        String name = reader.getInput();
+        
+        Product product = new Product(id, name);
+        System.out.println("Added new product " + product);
+        
+        manager.addProduct(product);
     }
     
     /**
-     * 
+     * Method to remove Products 
      */
     private void removeProduct()
     {
+        System.out.println("Removing a product");
         
+        System.out.println("Please enter the product ID");
+        String value = reader.getInput();
+        int id = Integer.parseInt(value);
+        
+        
+        
+        System.out.println("Removed product");
+        
+        manager.removeProduct(id);
     }
     
     /**
-     * 
+     * Method to Print all the Products
      */
     private void printAllProducts()
     {
@@ -120,9 +142,9 @@ public class StockApp
      */
     private void printHeading()
     {
-        System.out.println("/n******************************");
+        System.out.println("******************************");
         System.out.println(" Stock Management Application ");
-        System.out.println("    App05: by Tyronne Bradburn");
+        System.out.println("  App05: by Tyronne Bradburn");
         System.out.println("******************************");
     }
 }

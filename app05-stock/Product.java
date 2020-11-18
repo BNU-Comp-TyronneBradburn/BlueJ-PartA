@@ -12,6 +12,8 @@ public class Product
     private String name;
     // The quantity of this product in stock.
     private int quantity;
+    
+    private int lowStock;
 
     /**
      * Constructor for objects of class Product.
@@ -24,6 +26,7 @@ public class Product
         this.id = id;
         this.name = name;
         quantity = 0;
+        lowStock = 3; 
     }
 
     /**
@@ -41,7 +44,15 @@ public class Product
     {
         return name;
     }
-
+    
+    /**
+     * Make a new name for the product using the product ID number
+     */
+    public void changeName(int ID, String replacementName)
+    {
+       name = replacementName; 
+    }
+    
     /**
      * @return The quantity in stock.
      */

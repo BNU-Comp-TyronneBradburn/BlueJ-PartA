@@ -43,6 +43,23 @@ public class StockManager
     }
     
     /**
+     * Method to change the name of the product from the stock Manager
+     */
+    public void replaceName(int ID, String replacementName)
+    {
+        Product product = findProduct(ID);
+        if(product != null)
+        {
+            product.changeName(ID, replacementName);
+            System.out.println("Product Name Changed Successful" + product);
+        }
+        else 
+        {
+            System.out.println("Invalid ID");
+        }
+    }
+    
+    /**
      * Receive a delivery of a particular product.
      * Increase the quantity of the product by the given amount.
      * @param id The ID of the product.
@@ -122,7 +139,13 @@ public class StockManager
      */
     public int numberInStock(int id)
     {
-        return 0;
+        Product product = findProduct(id);
+        
+        if(product == null)
+        {
+            return 0;
+        }
+        return product.getQuantity();
     }
     
     /**
@@ -141,6 +164,23 @@ public class StockManager
                 System.out.println(product);
             }       
         }    
+    }
+    
+    /**
+     * Print products with Stock levels .
+     */
+    public void printLowStock()
+    {
+        for(Product product : stock)
+        {
+            int id = 100;
+             if(product.getQuantity() < 3)
+            {
+                System.out.println("WARNING! Low Stock");
+                System.out.println(product);
+            }
+            id++;
+        }
     }
     
     /**
