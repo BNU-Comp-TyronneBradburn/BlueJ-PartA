@@ -9,6 +9,8 @@ import java.util.ArrayList;
  */
 public class StockManager
 {
+    public static final int RESTOCK_LEVEL = 3;
+    
     // A list of the products.
     private ArrayList<Product> stock;
 
@@ -72,7 +74,8 @@ public class StockManager
         if(product != null)
         {
           product.increaseQuantity(amount);
-          System.out.println("Product Delivered : " + product);
+          System.out.println("Product Delivered : " + product + " amount = " 
+          + amount);
         }
         else
         {
@@ -169,17 +172,33 @@ public class StockManager
     /**
      * Print products with Stock levels .
      */
-    public void printLowStock()
+    public void printLowStock(int lowStockLevel)
     {
         for(Product product : stock)
         {
             int id = 100;
-             if(product.getQuantity() < 3)
+             if(product.getQuantity() < lowStockLevel)
             {
                 System.out.println("WARNING! Low Stock");
                 System.out.println(product);
             }
             id++;
+        }
+    }
+    
+    /**
+     * Print products with Stock levels .
+     */
+    public void restockProducts(int lowStockLevel, int restockLevel)
+    {
+        for(Product product : stock)
+        {
+             if(product.getQuantity() < lowStockLevel)
+            {
+                product.increaseQuantity(restockLevel);
+                System.out.println(product.getName() + " Low Stock");
+                System.out.println("Has been restocked to " + restockLevel);
+            }
         }
     }
     

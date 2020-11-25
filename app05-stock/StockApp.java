@@ -9,6 +9,8 @@
  */
 public class StockApp
 {
+    public static final String PRINT_ALL = "printall";
+    
     // Use to get user input
     private InputReader reader;
     
@@ -27,7 +29,7 @@ public class StockApp
     }
 
     /**
-     * Method to bring up the m
+     * Method to bring up the menu
      */
     public void run()
     {       
@@ -35,7 +37,7 @@ public class StockApp
     }
     
     /**
-     * 
+     * allows the the user to use the choices
      */
     public void getMenuChoice()
     {
@@ -46,7 +48,7 @@ public class StockApp
             printHeading();
             printMenuChoices();
            
-            String choice = reader.getInput();
+            String choice = reader.getString();
             
             
             choice = choice.toLowerCase();
@@ -72,10 +74,18 @@ public class StockApp
         {
             removeProduct();
         }
-        else if(choice.equals("printall"))
+        else if(choice.equals(PRINT_ALL))
         {
             printAllProducts();
         }
+        else if(choice.equals("deliver"))
+        {
+            deliverProduct();
+        }
+        else if(choice.equals("restock"))
+        {
+            restockAllProducts();
+        }        
     }
     
     /**
@@ -86,11 +96,11 @@ public class StockApp
         System.out.println("Adding a new product");
         
         System.out.println("Please enter the product ID");
-        String value = reader.getInput();
+        String value = reader.getString();
         int id = Integer.parseInt(value);
         
         System.out.println("Please enter product name");
-        String name = reader.getInput();
+        String name = reader.getString();
         
         Product product = new Product(id, name);
         System.out.println("Added new product " + product);
@@ -106,7 +116,7 @@ public class StockApp
         System.out.println("Removing a product");
         
         System.out.println("Please enter the product ID");
-        String value = reader.getInput();
+        String value = reader.getString();
         int id = Integer.parseInt(value);
         
         
@@ -114,6 +124,36 @@ public class StockApp
         System.out.println("Removed product");
         
         manager.removeProduct(id);
+    }
+    
+    /**
+     * 
+     */
+    private void deliverProduct()
+    {
+       int id = reader.getInt("Please enter the product ID");
+       int amount = reader.getInt("Please enter the Amount > ");
+      
+        manager.deliverProduct(id, amount);
+        
+        
+    }
+    
+    private void restockAllProducts()
+    {
+        int lowStock = reader.getInt("Please enter the low stock level") ;      
+        int reStock = reader.getInt("Please enter the restock level");
+        
+        manager.restockProducts(lowStock, reStock);
+    }
+    
+    
+    public void restockProduct()
+    {
+        int id = reader.getInt(" Please enter the product id >") ; 
+        int reStock = reader.getInt(" Please enter the restock level");
+        
+        manager.deliverProduct(id, reStock);
     }
     
     /**
@@ -132,6 +172,8 @@ public class StockApp
         System.out.println();
         System.out.println("    Add:        Add a new product");
         System.out.println("    Remove:     Remove an old product");
+        System.out.println("    Deliver:    Deliver an old product");
+        System.out.println("    Restock:   Restock all products");
         System.out.println("    PrintAll:   Print all products");
         System.out.println("    Quit:       Quit the program");
         System.out.println();        

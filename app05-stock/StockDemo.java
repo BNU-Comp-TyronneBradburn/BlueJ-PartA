@@ -28,10 +28,10 @@ public class StockDemo
         generator = new Random();
         
         
-        manager.addProduct(new Product(101,  "Samsung Galaxy S10"));
-        manager.addProduct(new Product(102,  "Samsubg Galaxy S10 Plus"));
-        manager.addProduct(new Product(103,  "Samsung Galaxy S20"));
-        manager.addProduct(new Product(104,  "Samsung Galaxy S20 Plus"));
+        manager.addProduct(new Product(101,  "Xbox X"));
+        manager.addProduct(new Product(102,  "PS5"));
+        manager.addProduct(new Product(103,  "PS4"));
+        manager.addProduct(new Product(104,  "Xbox S"));
         manager.addProduct(new Product(105,  "Apple Iphone 12"));
         manager.addProduct(new Product(106,  "Apple Iphone 12 Max"));
         manager.addProduct(new Product(107,  "Sony xperia 5 II"));
