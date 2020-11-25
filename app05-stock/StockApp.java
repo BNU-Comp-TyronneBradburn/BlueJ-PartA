@@ -113,30 +113,26 @@ public class StockApp
      */
     private void removeProduct()
     {
-        System.out.println("Removing a product");
+       System.out.println("Removing a product");
         
-        System.out.println("Please enter the product ID");
-        String value = reader.getString();
-        int id = Integer.parseInt(value);
+       System.out.println("Please enter the product ID");
+       String value = reader.getString();
+       int id = Integer.parseInt(value);
+   
+       System.out.println("Removed product");
         
-        
-        
-        System.out.println("Removed product");
-        
-        manager.removeProduct(id);
+       manager.removeProduct(id);
     }
     
     /**
-     * 
+     * Method to deliver Products
      */
     private void deliverProduct()
     {
-       int id = reader.getInt("Please enter the product ID");
-       int amount = reader.getInt("Please enter the Amount > ");
+        int id = reader.getInt("Please enter the product ID");
+        int amount = reader.getInt("Please enter the Amount > ");
       
         manager.deliverProduct(id, amount);
-        
-        
     }
     
     private void restockAllProducts()
@@ -173,7 +169,7 @@ public class StockApp
         System.out.println("    Add:        Add a new product");
         System.out.println("    Remove:     Remove an old product");
         System.out.println("    Deliver:    Deliver an old product");
-        System.out.println("    Restock:   Restock all products");
+        System.out.println("    Restock:    Restock all products");
         System.out.println("    PrintAll:   Print all products");
         System.out.println("    Quit:       Quit the program");
         System.out.println();        
