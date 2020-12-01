@@ -9,14 +9,24 @@
  */
 public class StockApp
 {
+    public static final String ADD_PRODUCT = "add";
+    public static final String REMOVE_PRODUCT = "remove";
+    public static final String DELIVER_PRODUCT = "deliver";
+    public static final String SELL_PRODUCT = "sell";
+    public static final String SEARCH_PRODUCT = "search";
+    public static final String LOW_STOCK = "lowstock";
+    public static final String RESTOCK_PRODUCTS = "restock";
     public static final String PRINT_ALL = "printall";
+    public static final String QUIT_PROGRAM = "quit";
     
     // Use to get user input
     private InputReader reader;
-    
     private StockManager manager;
-    
     private StockDemo oldStock;
+    private Product product;
+    private int id;
+    private int amount;
+    private String name;
     
     /**
      * Constructor for objects of class StockApp
@@ -26,6 +36,9 @@ public class StockApp
         reader = new InputReader();
         manager = new StockManager();
         oldStock = new StockDemo(manager);
+        this.id = id;
+        this.amount = amount;
+        this.name = name;
     }
 
     /**
@@ -52,7 +65,7 @@ public class StockApp
             
             
             choice = choice.toLowerCase();
-            if(choice.equals("quit"))
+            if(choice.equals(QUIT_PROGRAM))
             {
                 finished = true;
             }
@@ -66,26 +79,38 @@ public class StockApp
     
     private void executeMenuChoice(String choice)
     {
-        if(choice.equals("add"))
+        if(choice.equals(ADD_PRODUCT))
         {
             addProduct();
         }
-        else if(choice.equals("remove"))
+        else if(choice.equals(REMOVE_PRODUCT))
         {
             removeProduct();
         }
+        else if(choice.equals(DELIVER_PRODUCT))
+        {
+            deliverProduct();
+        }
+        else if(choice.equals(SELL_PRODUCT))
+        {
+            SellProducts();
+        }
+        else if(choice.equals(SEARCH_PRODUCT))
+        {
+            searchProduct();
+        }
+        else if(choice.equals(LOW_STOCK))
+        {
+            printLowStockProducts();
+        }
+        else if(choice.equals(RESTOCK_PRODUCTS))
+        {
+            restockAllProducts();
+        } 
         else if(choice.equals(PRINT_ALL))
         {
             printAllProducts();
         }
-        else if(choice.equals("deliver"))
-        {
-            deliverProduct();
-        }
-        else if(choice.equals("restock"))
-        {
-            restockAllProducts();
-        }        
     }
     
     /**
@@ -143,6 +168,29 @@ public class StockApp
         manager.restockProducts(lowStock, reStock);
     }
     
+    private void SellProducts()
+    {
+        System.out.println("Selling a new product");
+        
+        System.out.println("Please enter the product ID");
+        String value = reader.getString();
+        int id = Integer.parseInt(value);
+        
+        System.out.println("Please enter product name");
+        String name = reader.getString();
+        
+        System.out.println("Sold" + product);
+        
+        manager.sellProducts(id, amount);
+    }
+    
+    private void printLowStockProducts()
+    {
+        System.out.println("Products that are low on stock:");
+
+        int lowStockLevel = product.getLowStockLevel();
+        manager.printLowStockProducts(lowStockLevel);
+    }
     
     public void restockProduct()
     {
@@ -150,6 +198,16 @@ public class StockApp
         int reStock = reader.getInt(" Please enter the restock level");
         
         manager.deliverProduct(id, reStock);
+    }
+    
+    private void searchProduct()
+    {
+        System.out.println("Searching for a product");
+
+        System.out.println("Please enter a keyword");
+        String name = reader.getInput();
+
+        manager.searchProduct(name);
     }
     
     /**

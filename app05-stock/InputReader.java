@@ -46,5 +46,13 @@ public class InputReader
         int number = reader.nextInt();
         
         return number;
-    }    
+    } 
+    
+    public String getInput()
+    {
+        System.out.print("> ");
+        String inputLine = reader.nextLine();
+
+        return inputLine;
+    }
 }

@@ -28,7 +28,7 @@ public class StockManager
      */
     public void addProduct(Product item)
     {
-        stock.add(item);
+       stock.add(item); 
     }
     
     public void removeProduct(int id)
@@ -88,18 +88,18 @@ public class StockManager
      * Show the before and after status of the product.
      * @param id The ID of the product being sold.
      */
-    public void sellProducts(int id, int quantity)
+    public void sellProducts(int id, int amount)
     {
         Product product = findProduct(id);
         
         if(product != null) 
         {
             printDetails(id);
-            product.sell(quantity);
+            product.sell(amount);
             printDetails(id);
         }
     }
-    
+   
     /**
      * Show details of the given product. If found,
      * its name and stock quantity will be shown.
@@ -161,28 +161,27 @@ public class StockManager
         
         for(Product product : stock)
         {
-            String productName = product.getName().toLowerCase();
-            if(productName.contains(name))
+            if(product.getName().toLowerCase().contains(name))
             {
-                System.out.println(product);
-            }       
+                System.out.println(product.toString());
+            }
         }    
     }
     
     /**
      * Print products with Stock levels .
      */
-    public void printLowStock(int lowStockLevel)
+    public void printLowStockProducts(int lowStockLevel)
     {
+        System.out.println();
         for(Product product : stock)
         {
-            int id = 100;
-             if(product.getQuantity() < lowStockLevel)
+            
+             if(product.getQuantity() <= lowStockLevel)
             {
-                System.out.println("WARNING! Low Stock");
                 System.out.println(product);
             }
-            id++;
+            
         }
     }
     
@@ -193,7 +192,7 @@ public class StockManager
     {
         for(Product product : stock)
         {
-             if(product.getQuantity() < lowStockLevel)
+             if(product.getQuantity() <= lowStockLevel)
             {
                 product.increaseQuantity(restockLevel);
                 System.out.println(product.getName() + " Low Stock");

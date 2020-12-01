@@ -13,7 +13,7 @@ public class Product
     // The quantity of this product in stock.
     private int quantity;
     
-    private int lowStock;
+    private int lowStockLevel;
     
     private int restock;
 
@@ -29,7 +29,7 @@ public class Product
         this.name = name;
         quantity = 0;
         
-        lowStock = 3; 
+        lowStockLevel = 3; 
         restock = 5;
     }
 
@@ -116,4 +116,10 @@ public class Product
                 "Attempt to sell an out of stock item: " + name);
         }
     }
+    
+    public int getLowStockLevel()
+    {
+        return lowStockLevel;
+    }
+    
 }

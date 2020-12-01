@@ -1,5 +1,4 @@
 
-
 import java.util.Random;
 
 /**
@@ -17,7 +16,6 @@ public class StockDemo
     
     private Random generator;
     
-    
     /**
      * Create a StockManager and populate it with a few
      * sample products.
@@ -26,7 +24,6 @@ public class StockDemo
     {
         this.manager = manager;
         generator = new Random();
-        
         
         manager.addProduct(new Product(101,  "Xbox X"));
         manager.addProduct(new Product(102,  "PS5"));
@@ -62,10 +59,6 @@ public class StockDemo
         
         manager.printAllProducts();
     }
-    
-    
-    
-    
     
     /**
      * Get the product with the given id from the manager.
