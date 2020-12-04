@@ -15,7 +15,7 @@ public class Product
     
     private int lowStockLevel;
     
-    private int restock;
+    private int restockLevel;
 
     /**
      * Constructor for objects of class Product.
@@ -27,10 +27,9 @@ public class Product
     {
         this.id = id;
         this.name = name;
-        quantity = 0;
-        
+        this.quantity = quantity;
         lowStockLevel = 3; 
-        restock = 5;
+        restockLevel = 5;
     }
 
     /**

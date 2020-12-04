@@ -118,19 +118,19 @@ public class StockApp
      */
     private void addProduct()
     {
-        System.out.println("Adding a new product");
+       System.out.println("Adding a new product");
         
-        System.out.println("Please enter the product ID");
-        String value = reader.getString();
-        int id = Integer.parseInt(value);
+       System.out.println("Please enter the product ID");
+       String value = reader.getString();
+       int id = Integer.parseInt(value);
         
-        System.out.println("Please enter product name");
-        String name = reader.getString();
+       System.out.println("Please enter product name");
+       String name = reader.getString();
         
-        Product product = new Product(id, name);
-        System.out.println("Added new product " + product);
+       Product product = new Product(id, name);
+       System.out.println("Added new product " + product);
         
-        manager.addProduct(product);
+       manager.addProduct(product);
     }
     
     /**
@@ -138,13 +138,13 @@ public class StockApp
      */
     private void removeProduct()
     {
-       System.out.println("Removing a product");
+      System.out.println("Removing a product");
         
-       System.out.println("Please enter the product ID");
-       String value = reader.getString();
-       int id = Integer.parseInt(value);
+      System.out.println("Please enter the product ID");
+      String value = reader.getString();
+      int id = Integer.parseInt(value);
    
-       System.out.println("Removed product");
+      System.out.println("Removed product");
         
        manager.removeProduct(id);
     }

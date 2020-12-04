@@ -13,7 +13,7 @@ public class StockManager
     
     // A list of the products.
     private ArrayList<Product> stock;
-
+    
     /**
      * Initialise the stock manager.
      */
@@ -26,9 +26,9 @@ public class StockManager
      * Add a product to the list.
      * @param item The item to be added.
      */
-    public void addProduct(Product item)
+    public void addProduct(Product product)
     {
-       stock.add(item); 
+       stock.add(product); 
     }
     
     public void removeProduct(int id)

@@ -1,0 +1,121 @@
+Program.main();
+******************************
+ Stock Management Application 
+  App05: by Tyronne Bradburn
+******************************
+
+    Add:        Add a new product
+    Remove:     Remove an old product
+    Deliver:    Deliver an old product
+    Sell:       Selling an product
+    Search:     Search for an product
+    Restock:    Restock all products
+    PrintAll:   Print all products
+    Quit:       Quit the program
+
+> add
+Adding a new product
+Please enter the product ID
+> 111
+Please enter product name
+> Samsung Galaxy S10
+Added new product 111: Samsung Galaxy S10 stock level: 0
+******************************
+ Stock Management Application 
+  App05: by Tyronne Bradburn
+******************************
+
+    Add:        Add a new product
+    Remove:     Remove an old product
+    Deliver:    Deliver an old product
+    Sell:       Selling an product
+    Search:     Search for an product
+    Restock:    Restock all products
+    PrintAll:   Print all products
+    Quit:       Quit the program
+
+> add
+Adding a new product
+Please enter the product ID
+> 112
+Please enter product name
+> Samsung Galaxy S20
+Added new product 112: Samsung Galaxy S20 stock level: 0
+******************************
+ Stock Management Application 
+  App05: by Tyronne Bradburn
+******************************
+
+    Add:        Add a new product
+    Remove:     Remove an old product
+    Deliver:    Deliver an old product
+    Sell:       Selling an product
+    Search:     Search for an product
+    Restock:    Restock all products
+    PrintAll:   Print all products
+    Quit:       Quit the program
+
+> add
+Adding a new product
+Please enter the product ID
+> 113
+Please enter product name
+> Apple iPhone 11
+Added new product 113: Apple iPhone 11 stock level: 0
+******************************
+ Stock Management Application 
+  App05: by Tyronne Bradburn
+******************************
+
+    Add:        Add a new product
+    Remove:     Remove an old product
+    Deliver:    Deliver an old product
+    Sell:       Selling an product
+    Search:     Search for an product
+    Restock:    Restock all products
+    PrintAll:   Print all products
+    Quit:       Quit the program
+
+> add
+Adding a new product
+Please enter the product ID
+> 114
+Please enter product name
+> Apple iPhone 12
+Added new product 114: Apple iPhone 12 stock level: 0
+******************************
+ Stock Management Application 
+  App05: by Tyronne Bradburn
+******************************
+
+    Add:        Add a new product
+    Remove:     Remove an old product
+    Deliver:    Deliver an old product
+    Sell:       Selling an product
+    Search:     Search for an product
+    Restock:    Restock all products
+    PrintAll:   Print all products
+    Quit:       Quit the program
+
+> add
+Adding a new product
+Please enter the product ID
+> 115
+Please enter product name
+> Motorola G9 Plus
+Added new product 115: Motorola G9 Plus stock level: 0
+******************************
+ Stock Management Application 
+  App05: by Tyronne Bradburn
+******************************
+
+    Add:        Add a new product
+    Remove:     Remove an old product
+    Deliver:    Deliver an old product
+    Sell:       Selling an product
+    Search:     Search for an product
+    Restock:    Restock all products
+    PrintAll:   Print all products
+    Quit:       Quit the program
+
+> 
