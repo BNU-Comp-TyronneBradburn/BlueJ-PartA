@@ -28,9 +28,20 @@ public class StockManager
      */
     public void addProduct(Product product)
     {
-       stock.add(product); 
+        if(findProduct(product.getID()) != null)
+        {
+            System.out.println("ID already exists, " + "Please enter a New ID");
+        }   
+        else
+        {
+            stock.add(product); 
+            System.out.println(product + " has been added");
+        }
     }
     
+    /**
+     * Method to remove prduct
+     */
     public void removeProduct(int id)
     {
         Product product = findProduct(id);

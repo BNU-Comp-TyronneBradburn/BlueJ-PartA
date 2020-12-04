@@ -160,6 +160,9 @@ public class StockApp
         manager.deliverProduct(id, amount);
     }
     
+    /**
+     * method to restock products
+     */
     private void restockAllProducts()
     {
         int lowStock = reader.getInt("Please enter the low stock level") ;      
@@ -168,6 +171,9 @@ public class StockApp
         manager.restockProducts(lowStock, reStock);
     }
     
+    /**
+     * method to sell products
+     */
     private void SellProducts()
     {
         System.out.println("Selling a new product");
@@ -184,6 +190,9 @@ public class StockApp
         manager.sellProducts(id, amount);
     }
     
+    /**
+     * method to print low stock
+     */
     private void printLowStockProducts()
     {
         System.out.println("Products that are low on stock:");
@@ -192,6 +201,9 @@ public class StockApp
         manager.printLowStockProducts(lowStockLevel);
     }
     
+    /**
+     * method to restock products
+     */
     public void restockProduct()
     {
         int id = reader.getInt(" Please enter the product id >") ; 
@@ -200,6 +212,9 @@ public class StockApp
         manager.deliverProduct(id, reStock);
     }
     
+    /**
+     * method to search for product
+     */
     private void searchProduct()
     {
         System.out.println("Searching for a product");
