@@ -35,7 +35,8 @@ public class StockApp
     {
         reader = new InputReader();
         manager = new StockManager();
-        oldStock = new StockDemo(manager);
+        oldStock = new StockDemo(manager);    
+        product = new Product(id, name);
         this.id = id;
         this.amount = amount;
         this.name = name;
@@ -93,7 +94,7 @@ public class StockApp
         }
         else if(choice.equals(SELL_PRODUCT))
         {
-            SellProducts();
+            sellProduct();
         }
         else if(choice.equals(SEARCH_PRODUCT))
         {
@@ -113,40 +114,73 @@ public class StockApp
         }
     }
     
+    private void getAddInput()
+     {
+        System.out.println("Adding a new product");
+
+        System.out.println("\nPlease enter the product ID");
+        String value = reader.getInput();
+        id = Integer.parseInt(value);
+
+        System.out.println("Please enter the product name");
+        name = reader.getInput();
+     }
+    
     /**
      * Method to add a new product with a ID number 
      */
     private void addProduct()
     {
-       System.out.println("Adding a new product");
-        
-       System.out.println("Please enter the product ID");
-       String value = reader.getString();
-       int id = Integer.parseInt(value);
-        
-       System.out.println("Please enter product name");
-       String name = reader.getString();
-        
-       Product product = new Product(id, name);
-       System.out.println("Added new product " + product);
-        
-       manager.addProduct(product);
+       getAddInput();
+       if(manager.findProduct(id) == null)
+        {
+            Product product = new Product(id, name);
+            manager.addProduct(product);
+        }
+        else
+        {
+            System.out.println("\n------------------------------------");
+            System.out.println("Product ID " + id + " already in use");
+            System.out.println("------------------------------------");
+        }
     }
     
     /**
+     * User input for removeProduct method.
+     */
+    private void getRemoveInput()
+    {
+        System.out.println("Removing an existing product");
+
+        System.out.println("\nPlease enter the product ID");
+        String value = reader.getInput();
+        id = Integer.parseInt(value);
+
+        System.out.println("Please enter the product name ");
+        name = reader.getInput();
+    }
+    
+     /**
      * Method to remove Products 
      */
     private void removeProduct()
     {
-      System.out.println("Removing a product");
-        
-      System.out.println("Please enter the product ID");
-      String value = reader.getString();
-      int id = Integer.parseInt(value);
-   
-      System.out.println("Removed product");
-        
-       manager.removeProduct(id);
+        getRemoveInput();
+        product = new Product(id, name);
+        manager.removeProduct(id);
+    }
+    
+    private void getDeliverInput()
+    {
+        System.out.println("Delivering a product");
+
+        System.out.println("\nPlease enter the product ID");
+        String value = reader.getInput();
+        id = Integer.parseInt(value);
+
+        System.out.println("Please enter the amount to be delivered ");
+        String quantity = reader.getInput();
+        amount = Integer.parseInt(quantity);
     }
     
     /**
@@ -174,19 +208,22 @@ public class StockApp
     /**
      * method to sell products
      */
-    private void SellProducts()
+    private void getSellInput()
     {
-        System.out.println("Selling a new product");
-        
-        System.out.println("Please enter the product ID");
-        String value = reader.getString();
-        int id = Integer.parseInt(value);
-        
-        System.out.println("Please enter product name");
-        String name = reader.getString();
-        
-        System.out.println("Sold" + product);
-        
+        System.out.println("Selling an item");
+
+        System.out.println("Please enter the item ID");
+        String value = reader.getInput();
+        id = Integer.parseInt(value);
+
+        System.out.println("Please enter the quantity to sell ");
+        String quantity = reader.getInput();
+        amount = Integer.parseInt(quantity);
+    }
+    
+    private void sellProduct()
+    {
+        getSellInput();
         manager.sellProducts(id, amount);
     }
     
@@ -244,6 +281,7 @@ public class StockApp
         System.out.println("    Deliver:    Deliver an old product");
         System.out.println("    Sell:       Selling an product");
         System.out.println("    Search:     Search for an product");
+        System.out.println("    Low Stock:  Low Stock products");
         System.out.println("    Restock:    Restock all products");
         System.out.println("    PrintAll:   Print all products");
         System.out.println("    Quit:       Quit the program");

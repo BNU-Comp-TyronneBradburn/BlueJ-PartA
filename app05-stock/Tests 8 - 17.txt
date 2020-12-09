@@ -1,14 +1,28 @@
-Program.main();
-Added new product 101: Xbox X stock level: 0
-Added new product 102: PS5 stock level: 0
-Added new product 103: PS4 stock level: 0
-Added new product 104: Xbox S stock level: 0
-Added new product 105: Apple Iphone 12 stock level: 0
-Added new product 106: Apple Iphone 12 Max stock level: 0
-Added new product 107: Sony xperia 5 II stock level: 0
-Added new product 108: Google Pixel 4A stock level: 0
-Added new product 109: Huawei P40 stock level: 0
-Added new product 120: Huawei P40 Pro stock level: 0
+
+> ******************************
+ Stock Management Application 
+  App05: by Tyronne Bradburn
+******************************
+
+    Add:        Add a new product
+    Remove:     Remove an old product
+    Deliver:    Deliver an old product
+    Sell:       Selling an product
+    Search:     Search for an product
+    Low Stock:  Low Stock products
+    Restock:    Restock all products
+    PrintAll:   Print all products
+    Quit:       Quit the program
+
+> deliver
+Please enter the product ID
+112
+Please enter the Amount > 
+-4
+
+----------------------------------------------
+Cannot deliver less then 0 or negative quantities
+----------------------------------------------
 ******************************
  Stock Management Application 
   App05: by Tyronne Bradburn
@@ -19,19 +33,12 @@ Added new product 120: Huawei P40 Pro stock level: 0
     Deliver:    Deliver an old product
     Sell:       Selling an product
     Search:     Search for an product
+    Low Stock:  Low Stock products
     Restock:    Restock all products
     PrintAll:   Print all products
     Quit:       Quit the program
 
-> add
-Adding a new product
-
-Please enter the product ID
-> 111
-Please enter the product name
-> Samsung Galaxy S10
-Added new product 111: Samsung Galaxy S10 stock level: 0
-******************************
+> ******************************
  Stock Management Application 
   App05: by Tyronne Bradburn
 ******************************
@@ -41,18 +48,21 @@ Added new product 111: Samsung Galaxy S10 stock level: 0
     Deliver:    Deliver an old product
     Sell:       Selling an product
     Search:     Search for an product
+    Low Stock:  Low Stock products
     Restock:    Restock all products
     PrintAll:   Print all products
     Quit:       Quit the program
 
-> add
-Adding a new product
-
-Please enter the product ID
+> sell
+Selling an item
+Please enter the item ID
 > 112
-Please enter the product name
-> Samsung Galaxy S20
-Added new product 112: Samsung Galaxy S20 stock level: 0
+Please enter the quantity to sell 
+> 2
+
+Sold 2 item/s of product 112: Samsung Galaxy S20
+112: Samsung Galaxy S20 stock level: 8
+112: Samsung Galaxy S20 stock level: 6
 ******************************
  Stock Management Application 
   App05: by Tyronne Bradburn
@@ -63,18 +73,17 @@ Added new product 112: Samsung Galaxy S20 stock level: 0
     Deliver:    Deliver an old product
     Sell:       Selling an product
     Search:     Search for an product
+    Low Stock:  Low Stock products
     Restock:    Restock all products
     PrintAll:   Print all products
     Quit:       Quit the program
 
-> add
-Adding a new product
-
-Please enter the product ID
-> 113
-Please enter the product name
-> Apple iPhone 11
-Added new product 113: Apple iPhone 11 stock level: 0
+> sell
+Selling an item
+Please enter the item ID
+> 10
+Please enter the quantity to sell 
+> 10
 ******************************
  Stock Management Application 
   App05: by Tyronne Bradburn
@@ -85,65 +94,21 @@ Added new product 113: Apple iPhone 11 stock level: 0
     Deliver:    Deliver an old product
     Sell:       Selling an product
     Search:     Search for an product
+    Low Stock:  Low Stock products
     Restock:    Restock all products
     PrintAll:   Print all products
     Quit:       Quit the program
 
-> add
-Adding a new product
-
-Please enter the product ID
-> 114
-Please enter the product name
-> Apple iPhone 12
-Added new product 114: Apple iPhone 12 stock level: 0
-******************************
- Stock Management Application 
-  App05: by Tyronne Bradburn
-******************************
-
-    Add:        Add a new product
-    Remove:     Remove an old product
-    Deliver:    Deliver an old product
-    Sell:       Selling an product
-    Search:     Search for an product
-    Restock:    Restock all products
-    PrintAll:   Print all products
-    Quit:       Quit the program
-
-> add
-Adding a new product
-
-Please enter the product ID
-> 115
-Please enter the product name
-> Motorola G9 Plus
-Added new product 115: Motorola G9 Plus stock level: 0
-******************************
- Stock Management Application 
-  App05: by Tyronne Bradburn
-******************************
-
-    Add:        Add a new product
-    Remove:     Remove an old product
-    Deliver:    Deliver an old product
-    Sell:       Selling an product
-    Search:     Search for an product
-    Restock:    Restock all products
-    PrintAll:   Print all products
-    Quit:       Quit the program
-
-> add
-Adding a new product
-
-Please enter the product ID
-> 113
-Please enter the product name
-> New Product
+> sell
+Selling an item
+Please enter the item ID
+> 112
+Please enter the quantity to sell 
+> 10
 
 ------------------------------------
-Product ID 113 already in use
-------------------------------------
+Cannot sell amount bigger than product quantity
+--------------------------------------
 ******************************
  Stock Management Application 
   App05: by Tyronne Bradburn
@@ -154,21 +119,21 @@ Product ID 113 already in use
     Deliver:    Deliver an old product
     Sell:       Selling an product
     Search:     Search for an product
+    Low Stock:  Low Stock products
     Restock:    Restock all products
     PrintAll:   Print all products
     Quit:       Quit the program
 
-> add
-Adding a new product
+> sell
+Selling an item
+Please enter the item ID
+> 112
+Please enter the quantity to sell 
+> -2
 
-Please enter the product ID
-> 116
-Please enter the product name
-> 
-
------------------------------------
-Product name cannot be blank
------------------------------------
+---------------------------------------
+Cannot sell 0 or negative amount
+-----------------------------------------
 ******************************
  Stock Management Application 
   App05: by Tyronne Bradburn
@@ -179,6 +144,55 @@ Product name cannot be blank
     Deliver:    Deliver an old product
     Sell:       Selling an product
     Search:     Search for an product
+    Low Stock:  Low Stock products
+    Restock:    Restock all products
+    PrintAll:   Print all products
+    Quit:       Quit the program
+
+> search
+Searching for a product
+Please enter a keyword
+> Samsung
+112: Samsung Galaxy S20 stock level: 6
+******************************
+ Stock Management Application 
+  App05: by Tyronne Bradburn
+******************************
+
+    Add:        Add a new product
+    Remove:     Remove an old product
+    Deliver:    Deliver an old product
+    Sell:       Selling an product
+    Search:     Search for an product
+    Low Stock:  Low Stock products
+    Restock:    Restock all products
+    PrintAll:   Print all products
+    Quit:       Quit the program
+
+> lowstock
+Products that are low on stock:
+
+101: Xbox X stock level: 0
+102: PS5 stock level: 0
+103: PS4 stock level: 0
+104: Xbox S stock level: 0
+105: Apple Iphone 12 stock level: 0
+106: Apple Iphone 12 Max stock level: 0
+107: Sony xperia 5 II stock level: 0
+108: Google Pixel 4A stock level: 0
+109: Huawei P40 stock level: 0
+120: Huawei P40 Pro stock level: 0
+******************************
+ Stock Management Application 
+  App05: by Tyronne Bradburn
+******************************
+
+    Add:        Add a new product
+    Remove:     Remove an old product
+    Deliver:    Deliver an old product
+    Sell:       Selling an product
+    Search:     Search for an product
+    Low Stock:  Low Stock products
     Restock:    Restock all products
     PrintAll:   Print all products
     Quit:       Quit the program

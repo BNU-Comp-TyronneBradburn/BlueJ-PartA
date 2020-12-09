@@ -11,6 +11,9 @@ import java.util.Random;
  */
 public class StockDemo
 {
+    public static final int FIRST_ID = 101;
+    public static final int LAST_ID = 120;
+    
     // The stock manager.
     private StockManager manager;
     
@@ -25,7 +28,7 @@ public class StockDemo
         this.manager = manager;
         generator = new Random();
         
-        manager.addProduct(new Product(101,  "Xbox X"));
+        manager.addProduct(new Product(FIRST_ID,  "Xbox X"));
         manager.addProduct(new Product(102,  "PS5"));
         manager.addProduct(new Product(103,  "PS4"));
         manager.addProduct(new Product(104,  "Xbox S"));
@@ -34,7 +37,7 @@ public class StockDemo
         manager.addProduct(new Product(107,  "Sony xperia 5 II"));
         manager.addProduct(new Product(108,  "Google Pixel 4A"));
         manager.addProduct(new Product(109,  "Huawei P40"));
-        manager.addProduct(new Product(110,  "Huawei P40 Pro"));
+        manager.addProduct(new Product(LAST_ID,  "Huawei P40 Pro"));
         
     }
     
@@ -50,7 +53,7 @@ public class StockDemo
         // Take delivery of 5 items of one of the products.
         int quantity = 0;
         
-        for(int id = 101; id <= 110; id++)
+        for(int id = FIRST_ID; id <= LAST_ID; id++)
         {
             quantity = generator.nextInt(8);
             Product product = manager.findProduct(id);
@@ -99,7 +102,7 @@ public class StockDemo
         
         int quantity = 0;
         
-        for(int id = 101; id <= 110; id++)
+        for(int id = FIRST_ID; id <= LAST_ID; id++)
         {
             quantity = generator.nextInt(8);
             Product product = manager.findProduct(id);
@@ -114,7 +117,7 @@ public class StockDemo
         System.out.println("Demonstarting Product Devlivery");
         int amount = 0;
         
-        for(int id = 101; id<=110; id++)
+        for(int id = FIRST_ID; id<=LAST_ID; id++)
         {
             amount = generator.nextInt(8);
             manager.deliverProduct(id, amount);

@@ -13,6 +13,10 @@ public class StockManager
     
     // A list of the products.
     private ArrayList<Product> stock;
+    private Product product;
+    private int id;
+    private String name;
+    private StockDemo oldStock;
     
     /**
      * Initialise the stock manager.
@@ -20,6 +24,9 @@ public class StockManager
     public StockManager()
     {
         stock = new ArrayList<>();
+        this.id = id;
+        product = new Product(id, name);
+        this.name = name;
     }
 
     /**
@@ -28,14 +35,20 @@ public class StockManager
      */
     public void addProduct(Product product)
     {
-        if(findProduct(product.getID()) != null)
+        if(product != null)
         {
-            System.out.println("ID already exists, " + "Please enter a New ID");
-        }   
-        else
-        {
-            stock.add(product); 
-            System.out.println(product + " has been added");
+            if(product.getName().isBlank())
+            {
+                System.out.println("\n-----------------------------------");
+                System.out.println("Product name cannot be blank");
+                System.out.println("-----------------------------------");
+            }
+
+            else
+            {
+                System.out.println("Added new product " + product);
+                stock.add(product);
+            }
         }
     }
     
@@ -47,28 +60,14 @@ public class StockManager
         Product product = findProduct(id);
         if(product != null)
         {
-            stock.remove(product);
+            System.out.println("Removed an product " + product);      
+             stock.remove(product);
         }
         else
         {
-            System.out.println("Enter a valid ID number");
-        }
-    }
-    
-    /**
-     * Method to change the name of the product from the stock Manager
-     */
-    public void replaceName(int ID, String replacementName)
-    {
-        Product product = findProduct(ID);
-        if(product != null)
-        {
-            product.changeName(ID, replacementName);
-            System.out.println("Product Name Changed Successful" + product);
-        }
-        else 
-        {
-            System.out.println("Invalid ID");
+            System.out.println("\n--------------------------------");
+            System.out.println("Product ID does not exist");
+            System.out.println("--------------------------------");
         }
     }
     
@@ -80,18 +79,26 @@ public class StockManager
      */
     public void deliverProduct(int id, int amount)
     {
-        Product product = findProduct(id);
-        
-        if(product != null)
+         Product product = findProduct(id);
+
+        if(product != null && amount > 0)
         {
-          product.increaseQuantity(amount);
-          System.out.println("Product Delivered : " + product + " amount = " 
-          + amount);
+            System.out.println("Delivered " + amount + " item/s of product " 
+            + id + ": " +  product.getName());    
+            product.deliver(amount);
         }
-        else
+        else if(amount <= 0)
         {
-            System.out.println("Product ID " + id + " NOT FOUND!!!");
+            System.out.println("\n----------------------------------------------");
+            System.out.println("Cannot deliver less then 0 or negative quantities");
+            System.out.println("----------------------------------------------");
         }
+        else if(product == null)
+        {
+            System.out.println("\n--------------------------------------------");
+            System.out.println("Product ID: " + id + " does not exist");
+            System.out.println("--------------------------------------------");
+        }    
     }
 
     /**
@@ -103,11 +110,35 @@ public class StockManager
     {
         Product product = findProduct(id);
         
-        if(product != null) 
+         if(product != null) 
         {
-            printDetails(id);
-            product.sell(amount);
-            printDetails(id);
+          if(amount <= 0)
+           {
+             System.out.println("\n---------------------------------------");
+             System.out.println("Cannot sell 0 or negative amount");
+             System.out.println("-----------------------------------------");
+            }
+          else if(amount > product.getQuantity()) 
+            {
+             System.out.println("\n------------------------------------");
+             System.out.println("Cannot sell amount bigger than product quantity");
+             System.out.println("--------------------------------------");
+            }
+            else
+            {
+                System.out.println("\nSold " + amount + 
+                    " item/s of product " + product.getID() + ": " +
+                    product.getName());
+
+                printProduct(id);
+
+                for(int count = 0; count < amount; count++)
+                {
+                    product.sellAmount();
+                }
+
+                printProduct(id);
+            }
         }
     }
    
@@ -223,6 +254,19 @@ public class StockManager
         for(Product product : stock)
         {
          System.out.println(product);   
+        }
+    }
+    
+    /**
+     * Print out a singylar Product
+     */
+    public void printProduct(int id)
+    {
+       Product product = findProduct(id);
+
+       if(product != null) 
+        {
+            System.out.println(product.toString());
         }
     }
 }

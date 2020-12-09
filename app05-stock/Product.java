@@ -27,9 +27,9 @@ public class Product
     {
         this.id = id;
         this.name = name;
-        this.quantity = quantity;
-        lowStockLevel = 3; 
-        restockLevel = 5;
+        quantity = 0;
+        this.lowStockLevel = 3; 
+        this.restockLevel = 5;
     }
 
     /**
@@ -49,21 +49,32 @@ public class Product
     }
     
     /**
-     * Make a new name for the product using the product ID number
-     */
-    public void changeName(int ID, String replacementName)
-    {
-       name = replacementName; 
-    }
-    
-    /**
      * @return The quantity in stock.
      */
     public int getQuantity()
     {
         return quantity;
     }
-
+    
+    /**
+     * Restock with the given amount of this product.
+     * The current quantity is incremented by the given amount.
+     * @param amount The number of new items added to the stock.
+     *               This must be greater than zero.
+     */
+    public void increaseQuantity(int amount)
+    {
+        if(amount > 0) 
+        {
+            quantity += amount;
+        }
+        else 
+        {
+            System.out.println("Attempt to restock " + name +
+                " with a non-positive amount: " + amount);
+        }
+    }
+    
     /**
      * @return The id, name and quantity in stock.
      */
@@ -78,7 +89,7 @@ public class Product
      * @param amount The number of new items added to the stock.
      *               This must be greater than zero.
      */
-    public void increaseQuantity(int amount)
+    public void deliver(int amount)
     {
         if(amount > 0) 
         {
@@ -96,7 +107,7 @@ public class Product
      * Selling a quantity of this products.
      * An error is reported if there appears to be no stock.
      */
-    public void sell(int amount)
+    public void sellProduct(int amount)
     {
         if(quantity >= amount && quantity > 0) 
         {
@@ -116,9 +127,44 @@ public class Product
         }
     }
     
+     /**
+     * Method to Sell one product.
+     */
+    public void sellOne()
+    {
+        if(quantity > 0) 
+        {
+            quantity--;
+        }
+        else 
+        {
+            System.out.println(
+                "Attempt to sell an out of stock item: " + name);
+        }
+    }
+    
     public int getLowStockLevel()
     {
         return lowStockLevel;
+    }
+    
+    /**
+     * Sell one of these products.
+     * Otherwise a error message will appeat
+     */
+    public void sellAmount()
+    {
+        if(quantity > 0) 
+        {
+            quantity --;
+        }
+        else 
+        {
+            System.out.println();
+            System.out.println(
+                "Attempt to sell an out of stock item: " + name);
+            System.out.println();
+        }
     }
     
 }
